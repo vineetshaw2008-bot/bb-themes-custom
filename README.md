@@ -50,3 +50,29 @@ Expected: ~19700 bytes injected, code theme `bb:cloudroom:dark` /
 - This repo holds only the visual theme. The composer behaviour (auto compact,
   hover to type) lives in a separate plugin repo:
   `bb-plugin-auto-compact`.
+
+## Install from GitHub
+
+The theme is published at
+`https://github.com/vineetshaw2008-bot/bb-themes-custom` (private repo — use an
+account with access).
+
+```bash
+# Fresh install
+git clone https://github.com/vineetshaw2008-bot/bb-themes-custom.git ~/.bb/theme/cloudroom
+bb theme set cloudroom
+
+# Already cloned: update and re-activate
+cd ~/.bb/theme/cloudroom && git pull
+bb theme set cloudroom
+```
+
+The matching behaviour plugin is installed separately:
+
+```bash
+bb plugin install git:github.com/vineetshaw2008-bot/bb-plugin-auto-compact@v0.1.1 --yes
+bb plugin enable auto-compact
+```
+
+Installing the plugin does not auto-switch the theme, so run
+`bb theme set cloudroom` once after setup.
